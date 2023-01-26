@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-by-chanchal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chanchal160817/Node-js-from-scratch.git"
+  },
+  "author": "Chanchal Verma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chanchal160817/Node-js-from-scratch/issues"
+  },
+  "homepage": "https://github.com/Chanchal160817/Node-js-from-scratch#readme"
+}
