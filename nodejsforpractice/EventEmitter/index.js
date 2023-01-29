@@ -27,6 +27,7 @@ event.on('sayMyName',()=>{
 
 // create event by using 'emit' keyword 
 event.emit('sayMyName');
+//  return boolean value
 // shortcut:- emit - function call , on - function define
 
 // By creating one event we can call multiple functions.

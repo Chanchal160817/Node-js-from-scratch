@@ -1,4 +1,4 @@
-const a = require('fs');
+// const a = require('fs');
 const name = "chanchal";
 console.log(name);
 

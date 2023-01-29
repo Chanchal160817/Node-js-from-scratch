@@ -1,4 +1,7 @@
 const nodemailer = require('nodemailer')
+// For more detail :https://nodemailer.com/about/
+// For more detail :https://ethereal.email/
+
 const sendMail = async (req,res) =>{
     let testAccount = await nodemailer.createTestAccount()
     // connect with the smtp server
@@ -8,19 +11,19 @@ const sendMail = async (req,res) =>{
         secure:false,
         // true for 465 , false for other ports
         auth:{
-            user: 'eldridge.lowe3@ethereal.email',
+            user: 'cora66@ethereal.email',
              // generate ethereal user
-            pass: 'RVRZGfbQYzZPTeFmKQ'
+            pass: 'XWM3qem74dR6P9WU2R'
             // generated ethereal password  
         }
     })
 
     let info = await transporter.sendMail({
-        from: '"Chanchal Verma 👻" <chanchal@gmail.com>', // sender address
-        to: "chanchalv2510@gmail.com", // list of receivers
-        subject: "Hello Chanchal", // Subject line
-        text: "Hello world?", // plain text body
-        html: "<b>Hello world?</b>", // html body
+        from: '"Chanchal Verma 👻" <afreen@gmail.com>', // sender address
+        to: "sahunishaji1220@gmail.com", // list of receivers
+        subject: "Job Offer letter", // Subject line
+        text: "You are hired", // plain text body
+        html: "<b>You are hired</b>", // html body
     })
 
     console.log("Message sent: %s", info.messageId);

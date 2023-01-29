@@ -1,48 +1,52 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
-mongoose.set('strictQuery', true);
-// connction creation and create a new db 
+mongoose.set("strictQuery", true);
+// connction creation and create a new db
 // Return promise object
-mongoose.connect("mongodb+srv://Chanchal25-DB:ZHrSPQhp8HuOM2Yy@cluster0.ypi01as.mongodb.net/MongoDb", {
-    useNewUrlParser: true
-})
-    .then(() => console.log("MongoDb is connected on 3000"))
-    .catch(err => console.log(err))
+mongoose
+  .connect(
+    "mongodb+srv://Chanchal25-DB:ZHrSPQhp8HuOM2Yy@cluster0.ypi01as.mongodb.net/MongoDb",
+    {
+      useNewUrlParser: true,
+    }
+  )
+  .then(() => console.log("MongoDb is connected on 3000"))
+  .catch((err) => console.log(err));
 
 // Schema :-
 // A Mongoose Schema defines the structure of the document,
 // default values ,validators ,etc.
 
 const playlistSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    ctype: String,
-    videos: String,
-    author: String,
-    active: Boolean,
-    date: {
-        type: Date,
-        default: Date.now
-    }
-})
+  name: {
+    type: String,
+    required: true,
+  },
+  ctype: String,
+  videos: Number,
+  author: String,
+  active: Boolean,
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
 // module.exports = playlistSchema
 
 // Mongoose model :-
 // A mongoose model is a wrapper on the Mongoose schema.
 // A mongooes schema defines the structure of the document,
-// default values , validator,etc,whereas a mongoose model 
+// default values , validator,etc,whereas a mongoose model
 // provides an interface to the database for creating,
 // querying,updating,deleting records,etc.
 
 // Create a new mongoose model
-// collection creation 
+// collection creation
 // Should be in pascal convesion
-// Pascal convesion:-Start with capital letter i.e.Playlist 
-const playlist = new mongoose.model("Playlist", playlistSchema )
-// (collectionName,schemaName) 
+// Pascal convesion:-Start with capital letter i.e.Playlist
+const playlist = new mongoose.model("Playlist", playlistSchema);
+// (collectionName,schemaName)
 
 // create document or insert a new document
 
@@ -55,12 +59,12 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 //                 ctype: "Frontend",
 //                 videos: 300,
 //                 author: "Chanchal",
-//                 active: true, 
+//                 active: true,
 //             }
 //         )
-        
-//         // save() return promise 
-//         const result = await reactPlaylist.save() 
+
+//         // save() return promise
+//         const result = await reactPlaylist.save()
 //         console.log(result);
 //     } catch (error) {
 //         console.log(error);
@@ -78,7 +82,7 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 //                 ctype: "Database",
 //                 videos: 100,
 //                 author: "Chanchal",
-//                 active: true, 
+//                 active: true,
 //             }
 //         )
 //         const bootstrapPlaylist = new playlist(
@@ -87,7 +91,7 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 //                 ctype: "Framework",
 //                 videos: 70,
 //                 author: "Chanchal",
-//                 active: true, 
+//                 active: true,
 //             }
 //         )
 //         const expressPlaylist = new playlist(
@@ -96,7 +100,7 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 //                 ctype: "Framework",
 //                 videos: 80,
 //                 author: "Chanchal",
-//                 active: true, 
+//                 active: true,
 //             }
 //         )
 //         const sqlPlaylist = new playlist(
@@ -105,11 +109,11 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 //                 ctype: "Database",
 //                 videos: 50,
 //                 author: "Chanchal",
-//                 active: true, 
+//                 active: true,
 //             }
 //         )
-        
-//         // collection name 
+
+//         // collection name
 //         const result = await playlist.insertMany([mongodbPlaylist,bootstrapPlaylist,expressPlaylist,sqlPlaylist])
 //         console.log(result);
 //     } catch (error) {
@@ -119,7 +123,7 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 
 // createMultipleDocument()
 
-// How to read data 
+// How to read data
 
 // const readData = async () =>{
 //     try {
@@ -157,7 +161,7 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 //         .find({ctype : {$in:["Framework" ,"Database"]}})
 //         .select({name:1,_id:0})
 //         console.log(ctype)
-                   
+
 //         // $nin :- Matches none of the values specified in an array.
 //         const nin = await playlist
 //         .find({ctype : {$nin:["Framework" ,"Database"]}})
@@ -178,7 +182,7 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 
 // $or:- The $or operator performs a logical OR operation on an array of one or more <expressions> and selects the documents that satisfy at least one of the <expressions>.
 
-// Syntax:- 
+// Syntax:-
 // { $or: [ { <expression1> }, { <expression2> }, ... , { <expressionN> } ] }
 // const or = async () =>{
 //     try {
@@ -209,8 +213,8 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 // }
 // and()
 
-// 3. $not :- $not performs a logical NOT operation on the specified <operator-expression> and 
-// selects the documents that do not match the <operator-expression>. 
+// 3. $not :- $not performs a logical NOT operation on the specified <operator-expression> and
+// selects the documents that do not match the <operator-expression>.
 // This includes documents  that do not contain the field.
 
 // Syntax: { field: { $not: { <operator-expression> } } }
@@ -225,8 +229,8 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 //     };
 //     not()
 
-// 4.$nor:- $nor performs a logical NOR operation on an array of one or more query expression and 
-// selects the documents that fail all the query expressions in the array. 
+// 4.$nor:- $nor performs a logical NOR operation on an array of one or more query expression and
+// selects the documents that fail all the query expressions in the array.
 
 // Syntax :- { $nor: [ { <expression1> }, { <expression2> }, ...  { <expressionN> } ] }
 
@@ -238,12 +242,11 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 //     };
 //     nor();
 
-
-// Find output as count 
+// Find output as count
 // const count = async () => {
 // try {
 //    const result = await playlist.find({$and:[{ctype:"Backend"},{author:"Chanchal"}]}).select({name:1}).countDocuments()
-//    console.log(result); 
+//    console.log(result);
 // } catch (error) {
 //     console.log(error);
 // }
@@ -254,20 +257,79 @@ const playlist = new mongoose.model("Playlist", playlistSchema )
 // const sort = async () => {
 //     try {
 //        const result = await playlist.find({$and:[{author:"Chanchal"}]}).select({name:1}).sort()
-//        console.log(result); 
+//        console.log(result);
 //     } catch (error) {
 //         console.log(error);
 //     }
 //     }
 //     sort()
 
-    // Asending order:- 1 for asending order, -1 for desending order
-    const AsendingSort = async () => {
+// Asending order:- 1 for asending order, -1 for desending order
+// const AsendingSort = async () => {
+//     try {
+//        const result = await playlist.find({$and:[{author:"Chanchal"}]}).select({name:1}).sort({ctype:1})
+//     // also use sort as ================================================================.sort("ctype : 1")
+//     // count() deprecated by countdocument()
+//        console.log(result);
+//     } catch (error) {
+//         console.log(error);
+//     }
+//     }
+//     AsendingSort()
+
+
+// ====================================UPDATES =============================================================
+// Update data using mongoose?
+// update is deprecated so use updateOne,updateMany,findOneAndUpdate,findAndModify.
+// const update = async(id)=>{
+//     try {
+//         const result = await playlist.updateOne({_id:id}, {$set:{name:"Javascript"}})
+//         console.log(result);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+// update("63d397b0082859a45c6b314c")
+
+// 63d397b0082859a45c6b314c
+
+// Update by id
+// const updateById = async(id)=>{
+//     try {
+//         const result = await playlist.findByIdAndUpdate({_id:id}, {
+//             $set:{name:"Javascript By meerab"}
+//         },
+//         {new:true})
+//         console.log(result);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// updateById("63d397b0082859a45c6b314c")
+
+
+// ====================================DELETE =================================================
+
+// const deleteOne = async(id)=>{
+//         try {
+//             const result = await playlist.deleteOne({_id:id},{new:true})
+//             console.log(result);
+//         } catch (error) {
+//             console.log(error);
+//         }
+//     }
+
+//     deleteOne("63d2e417f9a7ba5133bee942")
+
+// deleteById
+const deleteById = async(id)=>{
         try {
-           const result = await playlist.find({$and:[{author:"Chanchal"}]}).select({name:1}).sort("video:1")
-           console.log(result); 
+            const result = await playlist.findByIdAndDelete({_id:id},{new:true})
+            console.log(result);
         } catch (error) {
             console.log(error);
         }
-        }
-        AsendingSort()
+    }
+
+    deleteById("63d2e417f9a7ba5133bee941")

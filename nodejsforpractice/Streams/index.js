@@ -16,7 +16,7 @@
 // error - This event is fired when there is any error receiving or writing data.
 // finish - This event is fired when all the data has been flushed to underlying system.
 
-const fs = require("fs");
+// const fs = require("fs");
 const http = require("http");
 const { Readable } = require("stream");
 
@@ -36,17 +36,17 @@ server.on("request", (req, res) => {
   // Handle stream events - data , end and error
 
   const rstream = fs.createReadStream("input.txt");
-//   rstream.on("data", (chunkdata) => {
-//     res.write(chunkdata);
-//   });
-//   rstream.on("end", () => {
-//     res.end();
-//   });
+  // rstream.on("data", (chunkdata) => {
+  //   res.write(chunkdata);
+  // });
+  // rstream.on("end", () => {
+  //   res.end();
+  // });
 
-//   rstream.on("error", (err) => {
-//     console.log(err);
-//     res.end("file not found");
-//   });
+  // rstream.on("error", (err) => {
+  //   console.log(err);
+  //   res.end("file not found");
+  // });
 
 // 3rd way
 //   stream pipline() method

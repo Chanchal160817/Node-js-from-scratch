@@ -17,8 +17,8 @@ const multiplication = (a,b) =>{
 const name = 'chanchal verma'
 // Before destructuring
 module.exports.add = add
-module.exports.sub = sub
-module.exports.mumultiplication =multiplication
+// module.exports.sub = sub
+// module.exports.mumultiplication =multiplication
 
 // After destructuring
-module.exports = {add,sub,multiplication,name}
+module.exports = {add, sub,multiplication ,name}

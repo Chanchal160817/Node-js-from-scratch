@@ -14,23 +14,23 @@ console.log(os.arch());
 // x64
 
 // find free memory present in system :-
-console.log(os.freemem());
+console.log(os.freemem())
 // 1071398912 in bytes
 
 // convert bytes into KB
-console.log(`${os.freemem() / 1024}`);
+// console.log(`${os.freemem() / 1024}`);
 
 // convert bytes into MB
-console.log(`${os.freemem() / 1024 / 1024}`);
+// console.log(`${os.freemem() / 1024 / 1024}`);
 
 // convert bytes into GB
 console.log(`${os.freemem() / 1024 / 1024 / 1024}`);
 
 // convert bytes into TB
-console.log(`${os.freemem() / 1024 / 1024 / 1024 / 1024}`);
+// console.log(`${os.freemem() / 1024 / 1024 / 1024 / 1024}`);
 
 // convert bytes into PB
-console.log(`${os.freemem() / 1024 / 1024 / 1024 / 1024 / 1024}`);
+// console.log(`${os.freemem() / 1024 / 1024 / 1024 / 1024 / 1024}`);
 
 // Find total memory in system 
 console.log(os.totalmem());

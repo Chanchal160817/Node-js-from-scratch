@@ -20,8 +20,8 @@ console.log(path.parse('C:/Users/Chanchal verma/Desktop/Nodejs By technicalThapa
 // How do we call any of them i.e.root,dir,base,name,ext
 // Only call name
 const myPath = path.parse('C:/Users/Chanchal verma/Desktop/Nodejs By technicalThapa/nodejsforpractice/PathModule/path.js')
-console.log(myPath.name);
+console.log(myPath.dir);
 
 // Only call root
-console.log(myPath.root);
+// console.log(myPath.root);
 

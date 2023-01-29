@@ -14,7 +14,7 @@ const start = async() =>{
             console.log(`I am live in port no. ${PORT} `);
         })
     } catch (error) {
-        
+        console.log(error);
     }
 }
 start()

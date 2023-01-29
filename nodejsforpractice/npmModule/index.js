@@ -28,6 +28,7 @@
 
 // dependencies: Packages required by your application in production.
 // devDependencies:  Packages that are only needed for local development and testing.
+// peekDependencies:-
 
 // To install a package and save it to package.json use:
 // npm install {package name} --save

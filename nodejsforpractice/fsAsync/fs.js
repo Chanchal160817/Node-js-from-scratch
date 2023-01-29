@@ -3,10 +3,10 @@ const fs = require("fs");
 // fs.writeFile('read.txt','Today i learn FS')
 // TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined
 
-// fs.writeFile('read.txt','Today i learn FS',(err)=>{
-//     console.log('files is created');
-//     console.log(err);
-// })
+fs.writeFile('read.txt', 'Today i learn FS',(err)=>{
+    console.log('files is created');
+    // console.log(err);
+})
 
 // we pass them a function as an argument-a callback-
 // that get called when that task completes.
@@ -18,7 +18,7 @@ const fs = require("fs");
 
 fs.appendFile('read.txt',' FS stand for file system',(err)=>{
     console.log('File is updated');
-    console.log(err);
+    // console.log(err);
 })
 
 fs.readFile('read.txt','UTF-8',(err,data)=>{

@@ -30,13 +30,13 @@ const server = http.createServer((req,res)=>{
         fs.readFile(`${__dirname}/API/userapi.json`,'utf-8',(err,data)=>{
             console.log(data);
             const objData = JSON.parse(data)
-            res.end(objData[0].name)
+            res.end(objData[0].userName)
         })
     } else {
         res.writeHead(404,{"Content-type":"text/html"})
-        res.end("<h1> 404 error pages. Page doesn't exist</h1>")
+        res.end("<h1>404 error pages. Page doesn't exist</h1>")
     }
 })
 server.listen(80,"127.0.0.1",()=>{
-    console.log(`listening to the port no 3000`);
+    console.log(`listening to the port no 80`);
 });
